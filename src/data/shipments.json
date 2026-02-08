@@ -1,0 +1,62 @@
+[
+  {
+    "id": "shanghai-rotterdam",
+    "from": "Shanghai",
+    "to": "Rotterdam",
+    "coordinates": [
+      { "lon": 121.4737, "lat": 31.2304 },
+      { "lon": 104.0668, "lat": 5.0 },
+      { "lon": 73.0, "lat": -3.0 },
+      { "lon": 50.0, "lat": 12.0 },
+      { "lon": 43.15, "lat": 12.63 },
+      { "lon": 32.3, "lat": 30.05 },
+      { "lon": 30.0, "lat": 31.5 },
+      { "lon": 10.0, "lat": 35.0 },
+      { "lon": -5.0, "lat": 36.0 },
+      { "lon": 4.4777, "lat": 51.9244 }
+    ],
+    "color": "#FF6B35",
+    "metrics": {
+      "volume": "24,500 TEU",
+      "value": "$1.2B",
+      "transportMode": "Container Ship"
+    }
+  },
+  {
+    "id": "mumbai-dubai",
+    "from": "Mumbai",
+    "to": "Dubai",
+    "coordinates": [
+      { "lon": 72.8777, "lat": 19.076 },
+      { "lon": 67.0, "lat": 20.0 },
+      { "lon": 60.0, "lat": 22.0 },
+      { "lon": 56.0, "lat": 24.0 },
+      { "lon": 55.2708, "lat": 25.2048 }
+    ],
+    "color": "#00D4AA",
+    "metrics": {
+      "volume": "18,200 TEU",
+      "value": "$890M",
+      "transportMode": "Bulk Carrier"
+    }
+  },
+  {
+    "id": "santos-lagos",
+    "from": "Santos",
+    "to": "Lagos",
+    "coordinates": [
+      { "lon": -46.3289, "lat": -23.9608 },
+      { "lon": -38.0, "lat": -15.0 },
+      { "lon": -28.0, "lat": -5.0 },
+      { "lon": -15.0, "lat": 2.0 },
+      { "lon": -5.0, "lat": 4.0 },
+      { "lon": 3.3792, "lat": 6.5244 }
+    ],
+    "color": "#7B68EE",
+    "metrics": {
+      "volume": "12,800 TEU",
+      "value": "$540M",
+      "transportMode": "Container Ship"
+    }
+  }
+]
