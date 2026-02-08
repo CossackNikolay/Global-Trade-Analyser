@@ -40,12 +40,23 @@ export function Globe() {
         navigationHelpButton: false,
         infoBox: false,
         selectionIndicator: false,
+        creditContainer: document.createElement('div'),
       });
 
       viewerRef.current = viewer;
 
+      // Dark atmosphere
+      const { scene } = viewer;
+      if (scene.skyAtmosphere) {
+        scene.skyAtmosphere.brightnessShift = -0.4;
+      }
+      scene.fog.enabled = true;
+      scene.fog.density = 0.0002;
+      scene.globe.enableLighting = true;
+      scene.backgroundColor = Color.BLACK;
+
       viewer.camera.setView({
-        destination: Cartesian3.fromDegrees(30, 15, 25_000_000),
+        destination: Cartesian3.fromDegrees(-30, 20, 22_000_000),
       });
 
       // --- Add trade routes ---
@@ -63,20 +74,19 @@ export function Globe() {
           polyline: {
             positions: fullPositions,
             width: 2,
-            material: Color.fromCssColorString(route.color).withAlpha(0.25),
+            material: Color.fromCssColorString(route.color).withAlpha(0.2),
             clampToGround: true,
           },
         });
 
         // Animated growing line
         const startTime = Date.now();
-        const durationMs = 4000 + Math.random() * 2000; // 4-6s per route
+        const durationMs = 4000 + Math.random() * 2000;
 
         const animatedPositions = new CallbackProperty(() => {
           const elapsed = Date.now() - startTime;
           const progress = Math.min(elapsed / durationMs, 1);
 
-          // Interpolate how many points to show
           const totalSegments = fullPositions.length - 1;
           const currentSegment = progress * totalSegments;
           const segmentIndex = Math.floor(currentSegment);
@@ -87,7 +97,6 @@ export function Globe() {
             positions.push(fullPositions[i]);
           }
 
-          // Interpolate partial segment
           if (segmentIndex < totalSegments) {
             const from = fullPositions[segmentIndex];
             const to = fullPositions[segmentIndex + 1];
@@ -109,14 +118,14 @@ export function Globe() {
             positions: animatedPositions,
             width: 4,
             material: new PolylineGlowMaterialProperty({
-              glowPower: 0.25,
+              glowPower: 0.3,
               color: Color.fromCssColorString(route.color),
             }),
             clampToGround: true,
           },
         });
 
-        // Endpoint labels
+        // Endpoint markers
         const first = route.coordinates[0];
         const last = route.coordinates[route.coordinates.length - 1];
 
@@ -125,16 +134,18 @@ export function Globe() {
           position: Cartesian3.fromDegrees(first.lon, first.lat),
           label: {
             text: route.from,
-            font: '14px sans-serif',
+            font: '13px Inter, system-ui, sans-serif',
             fillColor: Color.WHITE,
             outlineColor: Color.BLACK,
-            outlineWidth: 2,
-            style: 2, // FILL_AND_OUTLINE
-            pixelOffset: { x: 0, y: -20 } as any,
+            outlineWidth: 3,
+            style: 2,
+            pixelOffset: { x: 0, y: -22 } as any,
           },
           point: {
-            pixelSize: 6,
+            pixelSize: 7,
             color: Color.fromCssColorString(route.color),
+            outlineColor: Color.BLACK,
+            outlineWidth: 1,
           },
         });
 
@@ -143,16 +154,18 @@ export function Globe() {
           position: Cartesian3.fromDegrees(last.lon, last.lat),
           label: {
             text: route.to,
-            font: '14px sans-serif',
+            font: '13px Inter, system-ui, sans-serif',
             fillColor: Color.WHITE,
             outlineColor: Color.BLACK,
-            outlineWidth: 2,
+            outlineWidth: 3,
             style: 2,
-            pixelOffset: { x: 0, y: -20 } as any,
+            pixelOffset: { x: 0, y: -22 } as any,
           },
           point: {
-            pixelSize: 6,
+            pixelSize: 7,
             color: Color.fromCssColorString(route.color),
+            outlineColor: Color.BLACK,
+            outlineWidth: 1,
           },
         });
       });

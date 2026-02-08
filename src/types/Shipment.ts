@@ -4,8 +4,10 @@ export interface Coordinate {
 }
 
 export interface Metrics {
-  volume: string;
-  value: string;
+  costIndex: number;
+  transitDays: number;
+  co2Tons: number;
+  dutyTier: 'LOW' | 'MEDIUM' | 'HIGH';
   transportMode: string;
 }
 

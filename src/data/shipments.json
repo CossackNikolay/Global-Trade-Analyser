@@ -1,61 +1,77 @@
 [
   {
-    "id": "shanghai-rotterdam",
+    "id": "shanghai-la",
     "from": "Shanghai",
-    "to": "Rotterdam",
+    "to": "Los Angeles",
     "coordinates": [
-      { "lon": 121.4737, "lat": 31.2304 },
-      { "lon": 104.0668, "lat": 5.0 },
-      { "lon": 73.0, "lat": -3.0 },
-      { "lon": 50.0, "lat": 12.0 },
-      { "lon": 43.15, "lat": 12.63 },
-      { "lon": 32.3, "lat": 30.05 },
-      { "lon": 30.0, "lat": 31.5 },
-      { "lon": 10.0, "lat": 35.0 },
-      { "lon": -5.0, "lat": 36.0 },
-      { "lon": 4.4777, "lat": 51.9244 }
+      { "lon": 121.47, "lat": 31.23 },
+      { "lon": 130.0, "lat": 33.0 },
+      { "lon": 145.0, "lat": 38.0 },
+      { "lon": 160.0, "lat": 40.0 },
+      { "lon": 180.0, "lat": 42.0 },
+      { "lon": -170.0, "lat": 42.0 },
+      { "lon": -155.0, "lat": 40.0 },
+      { "lon": -140.0, "lat": 37.0 },
+      { "lon": -125.0, "lat": 35.0 },
+      { "lon": -118.24, "lat": 33.94 }
     ],
-    "color": "#FF6B35",
+    "color": "#FF4D4D",
     "metrics": {
-      "volume": "24,500 TEU",
-      "value": "$1.2B",
+      "costIndex": 100,
+      "transitDays": 14,
+      "co2Tons": 1.2,
+      "dutyTier": "HIGH",
       "transportMode": "Container Ship"
     }
   },
   {
-    "id": "mumbai-dubai",
+    "id": "mumbai-rotterdam",
     "from": "Mumbai",
-    "to": "Dubai",
+    "to": "Rotterdam",
     "coordinates": [
-      { "lon": 72.8777, "lat": 19.076 },
-      { "lon": 67.0, "lat": 20.0 },
-      { "lon": 60.0, "lat": 22.0 },
-      { "lon": 56.0, "lat": 24.0 },
-      { "lon": 55.2708, "lat": 25.2048 }
+      { "lon": 72.88, "lat": 19.08 },
+      { "lon": 60.0, "lat": 20.0 },
+      { "lon": 50.0, "lat": 14.0 },
+      { "lon": 43.15, "lat": 12.63 },
+      { "lon": 38.0, "lat": 18.0 },
+      { "lon": 32.3, "lat": 30.05 },
+      { "lon": 30.0, "lat": 31.5 },
+      { "lon": 15.0, "lat": 36.0 },
+      { "lon": -5.0, "lat": 36.0 },
+      { "lon": -9.0, "lat": 39.0 },
+      { "lon": -3.0, "lat": 48.0 },
+      { "lon": 4.48, "lat": 51.92 }
     ],
-    "color": "#00D4AA",
+    "color": "#00E5A0",
     "metrics": {
-      "volume": "18,200 TEU",
-      "value": "$890M",
+      "costIndex": 85,
+      "transitDays": 21,
+      "co2Tons": 1.8,
+      "dutyTier": "LOW",
       "transportMode": "Bulk Carrier"
     }
   },
   {
-    "id": "santos-lagos",
+    "id": "santos-nyc",
     "from": "Santos",
-    "to": "Lagos",
+    "to": "New York",
     "coordinates": [
-      { "lon": -46.3289, "lat": -23.9608 },
-      { "lon": -38.0, "lat": -15.0 },
-      { "lon": -28.0, "lat": -5.0 },
-      { "lon": -15.0, "lat": 2.0 },
-      { "lon": -5.0, "lat": 4.0 },
-      { "lon": 3.3792, "lat": 6.5244 }
+      { "lon": -46.33, "lat": -23.96 },
+      { "lon": -42.0, "lat": -20.0 },
+      { "lon": -38.0, "lat": -12.0 },
+      { "lon": -40.0, "lat": 0.0 },
+      { "lon": -50.0, "lat": 10.0 },
+      { "lon": -60.0, "lat": 18.0 },
+      { "lon": -68.0, "lat": 25.0 },
+      { "lon": -73.0, "lat": 33.0 },
+      { "lon": -74.01, "lat": 40.71 }
     ],
-    "color": "#7B68EE",
+    "color": "#A78BFA",
     "metrics": {
-      "volume": "12,800 TEU",
-      "value": "$540M",
+      "costIndex": 92,
+      "transitDays": 18,
+      "co2Tons": 1.5,
+      "dutyTier": "MEDIUM",
       "transportMode": "Container Ship"
     }
   }
