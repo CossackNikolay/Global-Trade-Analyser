@@ -1,21 +1,31 @@
+export interface Port {
+  name: string;
+  country: string;
+  lon: number;
+  lat: number;
+}
+
 export interface Coordinate {
   lon: number;
   lat: number;
 }
 
-export interface Metrics {
+export interface RouteMetrics {
+  distanceKm: number;
   costIndex: number;
   transitDays: number;
   co2Tons: number;
   dutyTier: 'LOW' | 'MEDIUM' | 'HIGH';
-  transportMode: string;
+  fuelCostIndex: number;
+  portFees: number;
 }
 
-export interface Route {
+export interface ActiveRoute {
   id: string;
-  from: string;
-  to: string;
-  coordinates: Coordinate[];
+  product: string;
+  origin: Port;
+  destination: Port;
+  path: Coordinate[];
+  metrics: RouteMetrics;
   color: string;
-  metrics: Metrics;
 }
